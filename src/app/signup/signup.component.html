@@ -1,0 +1,51 @@
+<div class="signup-form-container">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="signup-form">
+        <div class="mb-3 signup-form-control">
+            <label for="first-name" class="form-label">First Name: </label>
+            <input id="first-name" type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            </div>
+        </div>
+        <div class="mb-3 signup-form-control">
+            <label for="last-name" class="form-label">Last Name: </label>
+            <input id="last-name" type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
+        </div>
+    
+        <div class="mb-3 signup-form-control">
+            <label for="email" class="form-label">Email: </label>
+            <input id="email" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+    
+        <div class="mb-3 signup-form-control">
+            <label for="password" class="form-label">Password: </label>
+            <input id="password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 12 - 15 characters</div>
+            </div>
+        </div>
+    
+        <div class="mb-3 signup-form-control">
+            <label for="confirmPassword" class="form-label">Confirm Password: </label>
+            <input id="confirmPassword" type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">ConfirmPassword is required</div>
+                <div *ngIf="f.password.errors.minlength">Confirmassword must be at least 12 - 15 characters</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-sm btn-primary signup-btn">Submit</button>
+    </form>
+    
+      <p>Form Status: {{ signUpForm.status }}</p>
+      <p>{{signUpForm.value | json}}</p>
+      <p>{{signUpForm.value | json}}</p>
+</div>
+

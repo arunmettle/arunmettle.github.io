@@ -1,0 +1,16 @@
+:host(.sidebar-container){
+    width: 256px;
+}
+
+.sidebar-nav-title{
+    text-align: center;
+}
+
+.sidebar-nav-item{
+    display: flex;
+    justify-content: center;
+
+    .auth-btn{
+        width: 100%;
+    }
+}

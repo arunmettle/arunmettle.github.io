@@ -1,0 +1,27 @@
+<div class="c-app">
+  <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+      <div class="c-wrapper">
+        <header class="c-header">
+          <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
+            <svg class="c-icon c-icon-lg">
+            <use xlink:href="./coreui-icon/free.svg#cil-menu"></use>
+            </svg>
+            </button>
+          <app-top-menu></app-top-menu>
+        </header>
+        <div class="c-body app-body">
+          <main class="c-main">
+            <div class="container-fluid">
+              <div class="fade-in">
+                <router-outlet></router-outlet>
+              </div>
+             </div>
+          </main>
+        </div>
+        <footer class="c-footer">
+          <h2>Footer</h2>
+        </footer>
+      </div>
+</div>
