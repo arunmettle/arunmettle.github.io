@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopMenuModule } from './top-menu/top-menu.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StorageServiceModule } from "ngx-webstorage-service";
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule, 
-    TopMenuModule
+    TopMenuModule, 
+    StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

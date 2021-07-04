@@ -1,0 +1,21 @@
+.signin-form-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .signin-form{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+
+        .signin-form-control{
+            width: 100%;
+        }
+        .signin-btn{
+            width: 250px;
+            font-size: 16px;;
+        }
+    }
+}

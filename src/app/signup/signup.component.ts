@@ -20,7 +20,8 @@ export class SignupComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(this.pwdPattern)]],
-      confirmPassword: ['', [Validators.required, Validators.pattern(this.pwdPattern)]]
+      confirmPassword: ['', [Validators.required, Validators.pattern(this.pwdPattern)]],
+      userProfile: ['', Validators.required]
     },
     {
       validator: this.MustMatch('password', 'confirmPassword')

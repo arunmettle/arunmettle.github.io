@@ -41,11 +41,18 @@
                 <div *ngIf="f.password.errors.minlength">Confirmassword must be at least 12 - 15 characters</div>
             </div>
         </div>
+
+        <div class="mb-3 signup-form-control user-select">
+            <label class="col-md-3 col-form-label form-label" for="userprofile">I am a</label>
+            <div class="col-md-9">
+            <select class="form-control" id="userprofile" name="userprofile" formControlName="userProfile">
+            <option value="admin">Admin</option>
+            <option value="trainer">Trainer</option>
+            <option value="student">Student/Parent</option>
+            </select>
+            </div>
+        </div>
         <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-sm btn-primary signup-btn">Submit</button>
     </form>
-    
-      <p>Form Status: {{ signUpForm.status }}</p>
-      <p>{{signUpForm.value | json}}</p>
-      <p>{{signUpForm.value | json}}</p>
 </div>
 

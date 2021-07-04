@@ -1,1 +1,22 @@
-<p>signin works!</p>
+<div class="signin-form-container">
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="signin-form">
+        <div class="mb-3 signin-form-control">
+            <label for="email" class="form-label">Email: </label>
+            <input id="email" type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': f.email.errors }">
+            <div *ngIf="f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+        <div class="mb-3 signin-form-control">
+            <label for="password" class="form-label">Password: </label>
+            <input id="password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': f.password.errors }">
+            <div *ngIf="f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 12 - 15 characters</div>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!signInForm.valid" class="btn btn-sm btn-primary signin-btn">Submit</button>
+    </form>
+</div>
